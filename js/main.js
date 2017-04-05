@@ -3,8 +3,8 @@ define([], function () {
     require.config({
         baseUrl: '/boxuegu',
         paths: {
-            advertAdd: 'js/advert/advert_add ',
-            advertList: 'js/advert/advert_list ',
+            advertAdd: 'js/advert/advert_add',
+            advertList: 'js/advert/advert_list',
             courseAdd1: 'js/course/course_add_step1',
             courseAdd2: 'js/course/course_add_step2',
             courseAdd3: 'js/course/course_add_step3',
@@ -106,6 +106,6 @@ define([], function () {
     }
 
 
-    
+
 
 });
