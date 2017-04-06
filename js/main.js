@@ -12,6 +12,7 @@
             courseCategoryAdd: 'js/course/course_category_add',
             courseCategory: 'js/course/course_category',
             courseTopic: 'js/course/course_topic',
+            courseList:'js/course/course_list',
             login: 'js/home/login',
             repass: 'js/home/repass',
             settings: 'js/home/settings',
@@ -19,6 +20,7 @@
             teacherList: 'js/teacher/teacher_list',
             userList: 'js/user/user_list',
             userProfile: 'js/user/user_profile',
+            loading:'js/common/loading',
 
             // 配置第三方库
             template: 'lib/artTemplate/template-debug',

@@ -1,4 +1,4 @@
-define(['jquery', 'jqueryCookie','nprogress'], function ($,undefined,nprogress) {
+define(['jquery', 'jqueryCookie','nprogress','loading'], function ($,undefined,nprogress,undefined) {
 
     // 验证是否已经登陆
     (function () {

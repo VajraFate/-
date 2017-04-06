@@ -14,9 +14,21 @@ define(['jquery', 'jqueryCookie', 'template'], function ($, undefined, template)
 
         // 转码成相应的中文
         var userInfoStr = $.cookie('userInfo');
-
+        var userInfoStr;
+        // console.log(userInfoStr);
         // 应用JSON.parse解析成对象形式, 方便使用
-        var userInfoObj = JSON.parse(userInfoStr);
+
+        //JSON需要格式正确,不然会报错,所以这里用 异常处理   
+        try {
+            userInfoObj = JSON.parse(userInfoStr);
+
+        } catch (e) {
+            userInfoObj = {};
+        }
+
+
+        userInfoObj = JSON.parse(userInfoStr);
+
         var tplhtml = '  <!-- 头像 -->' +
             '<div class="avatar img-circle">' +
 
@@ -26,11 +38,13 @@ define(['jquery', 'jqueryCookie', 'template'], function ($, undefined, template)
         var render = template.compile(tplhtml);
         // 能拿到 userInfoObj 下面的属性
         var html = render(userInfoObj);
-        $('.profile').append(html);
+        $('.profileHear').append(html);
         console.log(html);
     })()
 
 
+
+ 
     // 左侧列表点击后 阴影停留
 
 
@@ -39,12 +53,28 @@ define(['jquery', 'jqueryCookie', 'template'], function ($, undefined, template)
 
     var path = location.pathname;
 
-    $('.list-unstyled li a').removeClass('active').filter('a[href="' + location.pathname + '"]').addClass('active');
-    console.log($('.list-unstyled li a'));
+    var pathHref = {
+        '/boxuegu/html/teacher/teacher_add.html': '/boxuegu/html/teacher/teacher_list.html',
+        '/boxuegu/html/course/course_add.html':'/boxuegu/html/course/course_list.html'
+    }
+    // console.log($('.list-unstyled li a'));
+
+    var aHref=pathHref[path]?pathHref[path]: path;
+
+
+    $('.list-unstyled li a').removeClass('active').filter('a[href="' + aHref + '"]').addClass('active');
+    
 
 
 
+    // 课堂管理 菜单下拉功能
+    $('.class-list').on('click',function(e){
+        e.preventDefault();
+        $(this).next().slideToggle();
+    })
 
-
-
+    $('.system-list').on('click',function(){
+        e.preventDefault();        
+        $(this).next().slideToggle();
+    })
 })
