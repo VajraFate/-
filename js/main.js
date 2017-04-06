@@ -1,4 +1,4 @@
-define([], function () {
+    define([], function () {
     // 配置
     require.config({
         baseUrl: '/boxuegu',
@@ -21,7 +21,7 @@ define([], function () {
             userProfile: 'js/user/user_profile',
 
             // 配置第三方库
-            artTemplate: 'lib/artTemplate/template-debug',
+            template: 'lib/artTemplate/template-debug',
             bootstrap: 'lib/bootstrap/js/bootstrap',
             // bootstrap: 'lib/bootstrap/js/bootstrap',
             bootstrapDatepicker: 'bootstrap-datepicker/js/bootstrap-datepicker',
@@ -34,7 +34,10 @@ define([], function () {
             jqueryForm: 'lib/jquery-form/jquery.form',
             jqueryRegion: 'lib/jquery-region/jquery.region',
             nprogress: 'lib/nprogress/nprogress',
-            index: 'js/home/index'
+            index: 'js/home/index',
+            common:'js/common/common',
+            aside:'js/common/aside',
+            header:'js/common/header',
         },
         shim: {
             // 是非define 定义的模块 ,有依赖与JQUERY 所以要在这里手动配置
@@ -45,9 +48,17 @@ define([], function () {
 
     });
 
+
+    require(['nprogress'],function(nprogress){
+        nprogress.start();
+    })
+
+// 如果有 部分js在任何文件上都需要 执行 ,可以在 mian.js上面添加一个 require, 在 它的js文件之前执行
+    // require(['common']);
+
     // 根据页面加载对应的JS模块
     var pathname = location.pathname;
-    console.log(pathname);
+    // console.log(pathname);   
     switch (pathname) {
         case '/boxuegu/index.html':
             require(['index']);
@@ -103,6 +114,7 @@ define([], function () {
         case '/boxuegu/html/user/user_list.html':
             require(['userList']);
             break;
+    
     }
 
 
