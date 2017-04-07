@@ -15,6 +15,7 @@ define(['jquery', 'jqueryCookie', 'template'], function ($, undefined, template)
         // 转码成相应的中文
         var userInfoStr = $.cookie('userInfo');
         var userInfoStr;
+        console.log(userInfoStr);
         // console.log(userInfoStr);
         // 应用JSON.parse解析成对象形式, 方便使用
 
@@ -27,19 +28,19 @@ define(['jquery', 'jqueryCookie', 'template'], function ($, undefined, template)
         }
 
 
-        userInfoObj = JSON.parse(userInfoStr);
+        // userInfoObj = JSON.parse(userInfoStr);
 
         var tplhtml = '  <!-- 头像 -->' +
             '<div class="avatar img-circle">' +
 
-            '<img src={{tc_avatar?tc_avatar:' + "/boxuegu/img/define.png" + '}}>' +
+            '<img src={{tc_avatar?tc_avatar:' + '"/boxuegu/img/default.png"' + '}}>' +
             '</div>' +
             '<h4>{{tc_name}}</h4>';
         var render = template.compile(tplhtml);
         // 能拿到 userInfoObj 下面的属性
         var html = render(userInfoObj);
         $('.profileHear').append(html);
-        console.log(html);
+        // console.log(html);
     })()
 
 
@@ -73,7 +74,7 @@ define(['jquery', 'jqueryCookie', 'template'], function ($, undefined, template)
         $(this).next().slideToggle();
     })
 
-    $('.system-list').on('click',function(){
+    $('.system-list').on('click',function(e){
         e.preventDefault();        
         $(this).next().slideToggle();
     })

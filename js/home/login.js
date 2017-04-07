@@ -1,4 +1,4 @@
-define(['jquery', 'jqueryCookie','nprogress','loading'], function ($,undefined,nprogress,undefined) {
+define(['jquery', 'jqueryCookie','nprogress','loading','template'], function ($,undefined,nprogress,undefined,template) {
 
     // 验证是否已经登陆
     (function () {
@@ -6,9 +6,36 @@ define(['jquery', 'jqueryCookie','nprogress','loading'], function ($,undefined,n
             location.href = '/boxuegu/index.html';
             
         }
-        console.log($.cookie('PHPSESSID'));
+        // console.log($.cookie('PHPSESSID'));
 
     })();
+
+
+
+    // 保留上个用户的头像
+    (function(){
+        var userStr=$.cookie('userInfo');
+        var userObj;
+        try{
+            userObj=JSON.parse(userStr);
+        }catch(e){
+            // userObj={tc_avatar:''};
+            userObj={};
+        }
+        // console.log(userObj);
+        // console.log(userObj.tc_avatar);
+        avatarUrl=userObj.tc_avatar?userObj.tc_avatar:"/boxuegu/img/default.png";
+       
+        
+        var avatar=  '<img src='+avatarUrl+' '+'class="img-circle" alt="">'
+        console.log( $('#avatarT'));
+        $('#avatarT').css('backgroundColor','#2f4050');
+        $('.avatar').html(avatar);
+    })();
+
+
+
+
 
 
     // 登陆验证
