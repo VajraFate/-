@@ -31,11 +31,14 @@ define(['header', 'aside', 'nprogress', 'jquery'], function (undefined, undefine
         // })
 
         $.ajax({
-            type: 'post',
+            type: 'POST',
             data: formStr,
             url: '/v6/teacher/add',
             success: function (data) {
+                console.log(1111);
+                alert('提交成功');
                 location.href = '/boxuegu/html/teacher/teacher_list.html';
+
             }
         })
     })
