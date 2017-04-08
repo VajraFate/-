@@ -5,21 +5,21 @@
 
 ### 响应格式
 
-| 名称     | 类型      | 必填  | 说明  |
-|:-------|:----------|:----|:---|
-| code   | number       |是| 状态码 |
-| msg    | string    |是| 状态信息  |
-| result | mixed    |否| 响应结果  |
-| time   | timestamp |是| 时间戳 |
+| 名称     | 类型        | 必填   | 说明   |
+| :----- | :-------- | :--- | :--- |
+| code   | number    | 是    | 状态码  |
+| msg    | string    | 是    | 状态信息 |
+| result | mixed     | 否    | 响应结果 |
+| time   | timestamp | 是    | 时间戳  |
 
 ### 状态码
 
-| 状态码     | 状态信息      | 说明  |
-|:-------|:----------|:---|
-| 200   | OK       | 成功 |
-| 401   |  Unauthorized  | 未授权 |
-| 403   |  Forbidden  | 没有权限 |
-| 500   |  Interernal Server Error  | 服务器内部错误 |
+| 状态码  | 状态信息                    | 说明      |
+| :--- | :---------------------- | :------ |
+| 200  | OK                      | 成功      |
+| 401  | Unauthorized            | 未授权     |
+| 403  | Forbidden               | 没有权限    |
+| 500  | Interernal Server Error | 服务器内部错误 |
 
 ## 权限管理
 
@@ -37,10 +37,10 @@ http://api.botue.com/v6/login
 * 数据格式 FormData
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| tc_name | 是  | string | 用户名称 |
-| tc_pass | 是  | string | 用户密码 |
+| 名称      | 必填   | 类型     | 说明   |
+| :------ | :--- | :----- | :--- |
+| tc_name | 是    | string | 用户名称 |
+| tc_pass | 是    | string | 用户密码 |
 
 #### 响应
 
@@ -102,13 +102,13 @@ http://api.botue.com/v6/teacher/add
 * 支持格式 FormData
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| tc_name | 是  | string | 讲师名称 |
-| tc_pass | 是  | string | 讲师密码 |
-| tc_join_date | 是  | string | 入职时间 yyyy-mm-dd |
-| tc_type | 是  | number | 讲师类型 0 管理员 1 普通 |
-| tc_gender | 是  | number | 讲师性别 0 男 1 女 |
+| 名称           | 必填   | 类型     | 说明              |
+| :----------- | :--- | :----- | :-------------- |
+| tc_name      | 是    | string | 讲师名称            |
+| tc_pass      | 是    | string | 讲师密码            |
+| tc_join_date | 是    | string | 入职时间 yyyy-mm-dd |
+| tc_type      | 是    | number | 讲师类型 0 管理员 1 普通 |
+| tc_gender    | 是    | number | 讲师性别 0 男 1 女    |
 
 #### 响应
 
@@ -210,9 +210,9 @@ http://api.botue.com/v6/teacher/edit
 * 支持格式 queryString
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| tc_id | 是  | number | 讲师id |
+| 名称    | 必填   | 类型     | 说明   |
+| :---- | :--- | :----- | :--- |
+| tc_id | 是    | number | 讲师id |
 
 #### 响应
 
@@ -248,13 +248,13 @@ http://api.botue.com/v6/teacher/update
 * 支持格式 FormData
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| tc_id | 是  | number | 讲师id |
-| tc_name | 是  | string | 讲师姓名 |
-| tc_join_date | 是  | string | 入职日期 |
-| tc_type | 是  | number | 讲师类型 0 管理员 1 普通 |
-| tc_gender | 是  | number | 讲师性别 0 男 1 女 |
+| 名称           | 必填   | 类型     | 说明              |
+| :----------- | :--- | :----- | :-------------- |
+| tc_id        | 是    | number | 讲师id            |
+| tc_name      | 是    | string | 讲师姓名            |
+| tc_join_date | 是    | string | 入职日期            |
+| tc_type      | 是    | number | 讲师类型 0 管理员 1 普通 |
+| tc_gender    | 是    | number | 讲师性别 0 男 1 女    |
 
 #### 响应
 
@@ -283,20 +283,20 @@ http://api.botue.com/v6/teacher/modify
 * 支持格式 FormData
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| tc_id | 是  | number | 讲师id |
-| tc_roster | 是  | string | 昵称 |
-| tc_gender | 是  | number | 性别 0 男 1 女 |
-| tc_birthday | 否  | string | 生日 yyyy-mm-dd |
-| tc_province | 是  | number | 所在省份 |
-| tc_city | 是  | number | 所在城市 |
-| tc_district | 是  | number | 所在县/区 |
-| tc_hometown | 是  | string | 家乡 |
-| tc_cellphone | 否  | number | 手机号码 |
-| tc_email | 否  | string | 邮箱地址 |
-| tc_join_date | 否  | string | 入职时间 |
-| tc_introduce | 是  | string | 自我介绍 |
+| 名称           | 必填   | 类型     | 说明            |
+| :----------- | :--- | :----- | :------------ |
+| tc_id        | 是    | number | 讲师id          |
+| tc_roster    | 是    | string | 昵称            |
+| tc_gender    | 是    | number | 性别 0 男 1 女    |
+| tc_birthday  | 否    | string | 生日 yyyy-mm-dd |
+| tc_province  | 是    | number | 所在省份          |
+| tc_city      | 是    | number | 所在城市          |
+| tc_district  | 是    | number | 所在县/区         |
+| tc_hometown  | 是    | string | 家乡            |
+| tc_cellphone | 否    | number | 手机号码          |
+| tc_email     | 否    | string | 邮箱地址          |
+| tc_join_date | 否    | string | 入职时间          |
+| tc_introduce | 是    | string | 自我介绍          |
 
 #### 响应
 
@@ -325,9 +325,9 @@ http://api.botue.com/v6/teacher/view
 * 支持格式 queryString
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| tc_id | 是  | number | 讲师id |
+| 名称    | 必填   | 类型     | 说明   |
+| :---- | :--- | :----- | :--- |
+| tc_id | 是    | number | 讲师id |
 
 #### 响应
 
@@ -371,10 +371,10 @@ http://api.botue.com/v6/teacher/handle
 * 支持格式 FormData
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| tc_id | 是  | number | 讲师id |
-| tc_status | 是  | number | 状态 |
+| 名称        | 必填   | 类型     | 说明   |
+| :-------- | :--- | :----- | :--- |
+| tc_id     | 是    | number | 讲师id |
+| tc_status | 是    | number | 状态   |
 
 
 #### 响应
@@ -449,9 +449,9 @@ http://api.botue.com/v6/uploader/avatar
 * 支持格式 multipart/form-data
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| tc_avatar | 是  | stream | 图片格式 |
+| 名称        | 必填   | 类型     | 说明   |
+| :-------- | :--- | :----- | :--- |
+| tc_avatar | 是    | stream | 图片格式 |
 
 #### 响应
 
@@ -483,10 +483,10 @@ http://api.botue.com/v6/teacher/repass
 * 支持格式 FormData
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| tc_pass | 是  | number | 原密码 |
-| tc_new_pass | 是  | number | 新密码 |
+| 名称          | 必填   | 类型     | 说明   |
+| :---------- | :--- | :----- | :--- |
+| tc_pass     | 是    | number | 原密码  |
+| tc_new_pass | 是    | number | 新密码  |
 
 #### 响应
 
@@ -573,9 +573,9 @@ http://api.botue.com/v6/category/child
 * 支持格式 queryString
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| cg_id | 是  | number | 顶级分类id |
+| 名称    | 必填   | 类型     | 说明     |
+| :---- | :--- | :----- | :----- |
+| cg_id | 是    | number | 顶级分类id |
 
 #### 响应
 
@@ -626,12 +626,12 @@ http://api.botue.com/v6/category/add
 * 支持格式 FormData
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| cg_name | 是  | string | 分类名称 |
-| cg_pid | 是  | number | 从属分类 |
-| cg_order | 否  | number | 排序 |
-| cg_is_hide | 否  | number | 是否隐藏 0 显示 1隐藏 |
+| 名称         | 必填   | 类型     | 说明            |
+| :--------- | :--- | :----- | :------------ |
+| cg_name    | 是    | string | 分类名称          |
+| cg_pid     | 是    | number | 从属分类          |
+| cg_order   | 否    | number | 排序            |
+| cg_is_hide | 否    | number | 是否隐藏 0 显示 1隐藏 |
 
 #### 响应
 
@@ -724,9 +724,9 @@ http://api.botue.com/v6/category/edit
 * 支持格式 queryString
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| cg_id | 是  | number | 分类id |
+| 名称    | 必填   | 类型     | 说明   |
+| :---- | :--- | :----- | :--- |
+| cg_id | 是    | number | 分类id |
 
 #### 响应
 
@@ -792,13 +792,13 @@ http://api.botue.com/v6/category/modify
 * 支持格式 FormData
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| cg_id | 是  | number | 分类id |
-| cg_name | 是  | string | 分类名称 |
-| cg_pid | 是  | number | 从属分类 |
-| cg_order | 否  | number | 排序 |
-| cg_is_hide | 否  | number | 是否隐藏 0 显示 1隐藏 |
+| 名称         | 必填   | 类型     | 说明            |
+| :--------- | :--- | :----- | :------------ |
+| cg_id      | 是    | number | 分类id          |
+| cg_name    | 是    | string | 分类名称          |
+| cg_pid     | 是    | number | 从属分类          |
+| cg_order   | 否    | number | 排序            |
+| cg_is_hide | 否    | number | 是否隐藏 0 显示 1隐藏 |
 
 #### 响应
 
@@ -829,9 +829,9 @@ http://api.botue.com/v6/course/create
 * 支持格式 FormData
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| cs_name | 是  | string | 课程名称 |
+| 名称      | 必填   | 类型     | 说明   |
+| :------ | :--- | :----- | :--- |
+| cs_name | 是    | string | 课程名称 |
 
 #### 响应
 
@@ -863,9 +863,9 @@ http://api.botue.com/v6/course/basic
 * 支持格式 queryString
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| cs_id | 是  | number | 课程id |
+| 名称    | 必填   | 类型     | 说明   |
+| :---- | :--- | :----- | :--- |
+| cs_id | 是    | number | 课程id |
 
 #### 响应
 
@@ -976,14 +976,14 @@ http://api.botue.com/v6/course/update/basic
 * 支持格式 FormData
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| cs_id | 是  | number | 课程id |
-| cs_name | 是  | string | 课程名称 |
-| cs_brief | 是  | string | 课程描述 |
-| cs_tc_id | 是  | number | 讲师id |
-| cs_cg_id | 是  | number | 分类id |
-| cs_tags | 否  | string | 课程标签 |
+| 名称       | 必填   | 类型     | 说明   |
+| :------- | :--- | :----- | :--- |
+| cs_id    | 是    | number | 课程id |
+| cs_name  | 是    | string | 课程名称 |
+| cs_brief | 是    | string | 课程描述 |
+| cs_tc_id | 是    | number | 讲师id |
+| cs_cg_id | 是    | number | 分类id |
+| cs_tags  | 否    | string | 课程标签 |
 
 #### 响应
 
@@ -1015,9 +1015,9 @@ http://api.botue.com/v6/course/picture
 * 支持格式 queryString
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| cs_id | 是  | number | 课程id |
+| 名称    | 必填   | 类型     | 说明   |
+| :---- | :--- | :----- | :--- |
+| cs_id | 是    | number | 课程id |
 
 #### 响应
 
@@ -1053,10 +1053,10 @@ http://api.botue.com/v6/uploader/cover
 * 支持格式 FormData
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| cs_id | 是  | number | 课程id |
-| cs_cover_original | 是  | stream | 课程图片 |
+| 名称                | 必填   | 类型     | 说明   |
+| :---------------- | :--- | :----- | :--- |
+| cs_id             | 是    | number | 课程id |
+| cs_cover_original | 是    | stream | 课程图片 |
 
 #### 响应
 
@@ -1089,13 +1089,13 @@ http://api.botue.com/v6/course/update/picture
 * 支持格式 FormData
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| cs_id | 是  | number | 课程id |
-| x | 是  | number | x 坐标 |
-| y | 是  | number | y 坐标 |
-| w | 是  | number | w 宽度 |
-| h | 是  | number | h 高度 |
+| 名称    | 必填   | 类型     | 说明   |
+| :---- | :--- | :----- | :--- |
+| cs_id | 是    | number | 课程id |
+| x     | 是    | number | x 坐标 |
+| y     | 是    | number | y 坐标 |
+| w     | 是    | number | w 宽度 |
+| h     | 是    | number | h 高度 |
 
 #### 响应
 
@@ -1127,9 +1127,9 @@ http://api.botue.com/v6/course/lesson
 * 支持格式 queryString
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| cs_id | 是  | number | 课程id |
+| 名称    | 必填   | 类型     | 说明   |
+| :---- | :--- | :----- | :--- |
+| cs_id | 是    | number | 课程id |
 
 #### 响应
 
@@ -1176,16 +1176,16 @@ http://api.botue.com/v6/course/chapter/add
 * 支持格式 FormData
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| ct_cs_id | 是  | number | 课时所属课程id |
-| ct_name | 是  | string | 课时名称 |
-| ct_brief | 是  | string | 课时介绍 |
-| ct_is_free | 是  | number | 是否免费 0 否 1 是 |
-| ct_video | 是  | string | 视频地址 |
-| ct_minutes | 是  | number | 视频时长 |
-| ct_seconds | 是  | number | 视频时长 |
-| ct_recommend_duration | 是  | number | 推荐学习时长 |
+| 名称                    | 必填   | 类型     | 说明           |
+| :-------------------- | :--- | :----- | :----------- |
+| ct_cs_id              | 是    | number | 课时所属课程id     |
+| ct_name               | 是    | string | 课时名称         |
+| ct_brief              | 是    | string | 课时介绍         |
+| ct_is_free            | 是    | number | 是否免费 0 否 1 是 |
+| ct_video              | 是    | string | 视频地址         |
+| ct_minutes            | 是    | number | 视频时长         |
+| ct_seconds            | 是    | number | 视频时长         |
+| ct_recommend_duration | 是    | number | 推荐学习时长       |
 
 #### 响应
 
@@ -1215,9 +1215,9 @@ http://api.botue.com/v6/course/chapter/edit
 * 支持格式 queryString
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| ct_id | 是  | number | 课时id |
+| 名称    | 必填   | 类型     | 说明   |
+| :---- | :--- | :----- | :--- |
+| ct_id | 是    | number | 课时id |
 
 #### 响应
 
@@ -1257,17 +1257,17 @@ http://api.botue.com/v6/course/chapter/modify
 * 支持格式 FormData
 * 请求参数
 
-| 名称      | 必填 | 类型     | 说明   |
-|:--------|:---|:-------|:-----|
-| ct_id | 是  | number | 课时id |
-| ct_cs_id | 否  | number | 课时所属课程id |
-| ct_name | 是  | string | 课时名称 |
-| ct_brief | 是  | string | 课时介绍 |
-| ct_is_free | 是  | number | 是否免费 0 否 1 是 |
-| ct_video | 是  | string | 视频地址 |
-| ct_minutes | 是  | number | 视频时长 |
-| ct_seconds | 是  | number | 视频时长 |
-| ct_recommend_duration | 是  | number | 推荐学习时长 |
+| 名称                    | 必填   | 类型     | 说明           |
+| :-------------------- | :--- | :----- | :----------- |
+| ct_id                 | 是    | number | 课时id         |
+| ct_cs_id              | 否    | number | 课时所属课程id     |
+| ct_name               | 是    | string | 课时名称         |
+| ct_brief              | 是    | string | 课时介绍         |
+| ct_is_free            | 是    | number | 是否免费 0 否 1 是 |
+| ct_video              | 是    | string | 视频地址         |
+| ct_minutes            | 是    | number | 视频时长         |
+| ct_seconds            | 是    | number | 视频时长         |
+| ct_recommend_duration | 是    | number | 推荐学习时长       |
 
 #### 响应
 

@@ -26,7 +26,8 @@
             template: 'lib/artTemplate/template-debug',
             bootstrap: 'lib/bootstrap/js/bootstrap',
             // bootstrap: 'lib/bootstrap/js/bootstrap',
-            bootstrapDatepicker: 'bootstrap-datepicker/js/bootstrap-datepicker',
+            bootstrapDatepicker: 'lib/bootstrap-datepicker/js/bootstrap-datepicker',
+            datepickerCN:'lib/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
             ckeditor: 'lib/ckeditor/ckeditor',
             ckeditorLand: 'lib/ckeditor/ckeditor/lang/zh-cn',
 
@@ -45,7 +46,12 @@
             // 是非define 定义的模块 ,有依赖与JQUERY 所以要在这里手动配置
             bootstrap: {
                 deps: ['jquery']
-            }
+            },
+            datepickerCN:{
+                deps:['jquery','bootstrapDatepicker']
+            },
+            // 日期插件的语言包
+            
         },
 
     });
