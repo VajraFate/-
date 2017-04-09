@@ -403,7 +403,7 @@ http://api.botue.com/v6/teacher/profile
 
 #### 请求
 
-* 请求方式 GET
+* 请求方式	 GET	
 * 请求参数 无
 
 #### 响应
@@ -1309,7 +1309,7 @@ http://api.botue.com/v6/course
     {
       "cs_id": 1,
       "cs_name": "CSS",
-      "cs_cover": "http://static.botue.com/images/cover/586a53f784601.jpg?x-oss-process=image/crop,x_0,y_39,w_512,h_256",
+        "cs_cover": "http://static.botue.com/images/cover/586a53f784601.jpg?x-oss-process=image/crop,x_0,y_39,w_512,h_256",
       "tc_name": "李清照",
       "cg_name": "HTML/CSS"
     },
