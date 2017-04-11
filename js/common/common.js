@@ -23,15 +23,20 @@ define(['jqueryCookie'], function () {
 
 
     return {
-        parseSearch:function(searchName){
-            var searchArr=location.search.slice(1).split('&');
-            var searchObj={};
+        parseSearch: function (searchName) {
+            var searchArr = location.search.slice(1).split('&');
+            var searchObj = {};
             var tep;
-            for(var i=0;i<searchArr.length;i++){
-                tep=searchArr[i].split('=');
-                searchObj[tep[0]]=tep[1]
-              }
-              return (searchName==null)?searchObj:search[searchName]
+            for (var i = 0; i < searchArr.length; i++) {
+                tep = searchArr[i].split('=');
+                searchObj[tep[0]] = tep[1]
+            }
+            // try{
+            //       return (searchName==null)?searchObj:search[searchName]
+            // }catch(e){
+            //     console.log('参数错误');
+            // }
+            return (searchName == null) ? searchObj : searchObj[searchName]
         }
     }
 })
