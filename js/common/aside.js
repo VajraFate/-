@@ -22,11 +22,11 @@ define(['jquery', 'jqueryCookie', 'template'], function ($, undefined, template)
         //JSON需要格式正确,不然会报错,所以这里用 异常处理   
         try {
             userInfoObj = JSON.parse(userInfoStr);
-
+            
         } catch (e) {
             userInfoObj = {};
         }
-
+        console.log(userInfoObj);
 
         // userInfoObj = JSON.parse(userInfoStr);
 

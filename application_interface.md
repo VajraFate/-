@@ -168,7 +168,7 @@ JSON示例
       "tc_email": "",
       "tc_status": 0,
       "tc_birthday": "1970-01-01",
-      "tc_join_date": "1970-01-01"
+      "tc_join_date": "1970-01-01"	
     },
     {
       "tc_id": 12,

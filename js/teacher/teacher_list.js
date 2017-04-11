@@ -2,12 +2,16 @@ define(['bootstrap', 'aside', 'nprogress', 'jquery', 'template', 'header'], func
     (function () {
         $.get('/v6/teacher', function (data) {
             if (data.code = 200) {
+                console.log(data);
+
                 var html = template('teachTel', data);
 
                 $('.teacher-table-list tbody').append(html);
 
 
-
+            }
+            else if(data.code==403){
+                alert('权限不足');
             }
 
 

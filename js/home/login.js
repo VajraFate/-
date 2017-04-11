@@ -1,10 +1,10 @@
-define(['jquery', 'jqueryCookie','nprogress','loading','template'], function ($,undefined,nprogress,undefined,template) {
+define(['jquery', 'jqueryCookie', 'nprogress', 'loading', 'template'], function ($, undefined, nprogress, undefined, template) {
 
     // 验证是否已经登陆
     (function () {
         if ($.cookie('PHPSESSID')) {
             location.href = '/boxuegu/index.html';
-            
+
         }
         // console.log($.cookie('PHPSESSID'));
 
@@ -13,23 +13,23 @@ define(['jquery', 'jqueryCookie','nprogress','loading','template'], function ($,
 
 
     // 保留上个用户的头像
-    (function(){
-        var userStr=$.cookie('userInfo');
+    (function () {
+        var userStr = $.cookie('userInfo');
         var userObj;
-        try{
-            userObj=JSON.parse(userStr);
-        }catch(e){
+        try {
+            userObj = JSON.parse(userStr);
+        } catch (e) {
             // userObj={tc_avatar:''};
-            userObj={};
+            userObj = {};
         }
         // console.log(userObj);
         // console.log(userObj.tc_avatar);
-        avatarUrl=userObj.tc_avatar?userObj.tc_avatar:"/boxuegu/img/default.png";
-       
-        
-        var avatar=  '<img src='+avatarUrl+' '+'class="img-circle" alt="">'
-        console.log( $('#avatarT'));
-        $('#avatarT').css('backgroundColor','#2f4050');
+        avatarUrl = userObj.tc_avatar ? userObj.tc_avatar : "/boxuegu/img/default.png";
+
+
+        var avatar = '<img src=' + avatarUrl + ' ' + 'class="img-circle" alt="">'
+        console.log($('#avatarT'));
+        $('#avatarT').css('backgroundColor', '#2f4050');
         $('.avatar').html(avatar);
     })();
 
@@ -54,7 +54,10 @@ define(['jquery', 'jqueryCookie','nprogress','loading','template'], function ($,
 
                         // 将用户头衔等信息用cookie传递给其他页面
                         // 记得将data.result转化为字符串形式
-                        $.cookie('userInfo',JSON.stringify(data.result),{path:'/'});
+
+                        $.cookie('userInfo', JSON.stringify(data.result), {
+                            path: '/'
+                        });
 
 
                         location.href = '/boxuegu/index.html';

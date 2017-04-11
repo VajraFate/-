@@ -81,7 +81,7 @@ $(this).ajaxForm({
 
 ### jquery-ajax全局事件
 > 如果使用了jquery的ajax相关方法发送请求，
-那么jquery就会在document触发上触发几个jquery定义的事件。
+> 那么jquery就会在document触发上触发几个jquery定义的事件。
 
 ##### 事件种类
 
@@ -264,7 +264,7 @@ $('input').on('changeDate', function($e){
     + 文件上传成功的回调
     + 回调接收的第一个参数为文件对象，第二个参数为请求回来的数据
 
-### ckeditor
+### 
 > [官方地址](ttp://ckeditor.com)
 
 - CKEDITOR.replace
@@ -279,7 +279,7 @@ var edit = CKEDITOR.replace("ckeditor", config);
 
 - 实例.updateElement
     + 更新编辑内容到文本框的方法
-    
+
 - 实例.setData
     + 设置内容
 
@@ -332,7 +332,7 @@ var edit = CKEDITOR.replace("ckeditor", config);
 
 ### phpStudy配置
 
-- 配置网站根目录
+-   配置网站根目录
     + 网站根目录是HTTP服务器上存放网站程序的空间
     + 先右键phpStudy图标，选择phpStudy设置，勾选允许目录列表
     + 根目录配置
@@ -344,26 +344,26 @@ var edit = CKEDITOR.replace("ckeditor", config);
             + 查找并修改DocumentRoot "C:/phpStudy/WWW"
     + 重启HTTP服务器
 
-- 配置虚拟主机
-    + 虚拟主机可以让一台服务器模拟成为多台服务器，实现多网站管理
-    + 1. 开启配置
+-   配置虚拟主机
+    +   虚拟主机可以让一台服务器模拟成为多台服务器，实现多网站管理
+    +   1. 开启配置
         + 打开httpd.conf配置文件
         + 查找#Include conf/extra/httpd-vhosts.conf，去掉#号注释
-    + 2. 虚拟主机配置
+    +   2. 虚拟主机配置
         + 打开**/phpStudy/Apache/conf/extra/httpd-vhosts.conf
         + 复制virtualHost![代码预览](img/virtualHost.png)
             + 修改DocumentRoot为"C:/phpStudy/WWW/boxuegu"
             + 修改ServerName为"boxuegu.com" 
             + 修改ServerAlias为"www.boxuegu.com" 
-    + 3. 修改DNS
+    +   3. 修改DNS
         + 打开C:/Windows/System32/drivers/etc/hosts
         + 127.0.0.1 boxuegu.com
         + 127.0.0.1 www.boxuegu.com
-    + 4. 成功验证
+    +   4. 成功验证
         + 重启Apache
         + 浏览器访问www.boxuegu.com
 
-- 使用php抽取页面公共模块
+-   使用php抽取页面公共模块
     + 配置后我们写在html中的php代码就会执行，这里我们的目的是使用php的include方法实现页面公共部分的拆分
     + 添加配置
         1. 打开**/phpStudy/Apache/conf/httpd.conf主配置文件
@@ -374,7 +374,7 @@ var edit = CKEDITOR.replace("ckeditor", config);
         2. 使用导入抽取的公共模块
         3. 浏览器访问www.boxuegu.com验证
 
-- 配置反向代理
+-   配置反向代理
     + 一种跨域方案，这种方案是通过后台配置实现的，配置后前端不需要做任何事情
         1. 我们开发所需的web接口已经开发完毕并在公网上线
         2. 但是其接口域名与我们的域名不一样，所以当使用ajax请求这些接口时浏览器会报跨域错误
