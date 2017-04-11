@@ -64,8 +64,8 @@
         <!-- 标题 -->
         <div class="title">
             <h5>课时管理 <small>LESSON MANAGE</small></h5>
-            <a src="javascript:;" data-toggle="modal" data-target="#chapterModal" class="btn btn-success btn-sm pull-right">
-                <i class="fa fa-plus"></i> 课时
+            <a src="javascript:;" data-toggle="modal" data-target="#chapterModal" class="btn btn-success btn-sm pull-right edit-btn-add">
+                <i class=" fa fa-plus"></i> 课时
             </a>
         </div>
         <div class="lessons">
@@ -101,60 +101,60 @@
             <h4 class="modal-title">{{tc_id?'编辑课时':'添加课时'}}</h4>
         </div>
         <div class="modal-body">
-
-            {{if tc_id}}
-            <input type="hidden" name='' value=''> {{/if}}
-            <div class="form-group">
-                <label for="" class="col-xs-2 control-label">标题</label>
-                <div class="col-xs-6">
-                    <input name='ct_name' value='{{ct_name}}' type="text" class="form-control input-sm">
-                </div>
-                <div class="col-xs-2">
-                    <div class="checkbox">
-                        <label>
-                                        <input type="checkbox" name='ct_is_free' value='0' {{ct_is_free==0?'checked':' '}}> 免费课时
+            <form id="add-edit-form" action={{ ct_id? '/v6/course/chapter/modify': '/v6/course/chapter/add' }} method="post" class="form-horizontal">
+                {{ if ct_id }} 
+                <input type="hidden" name='ct_id' value='{{ct_id}}'> {{/if}}
+                <div class="form-group">
+                    <label for="" class="col-xs-2 control-label">标题</label>
+                    <div class="col-xs-6">
+                        <input name='ct_name' value='{{ct_name}}' type="text" class="form-control input-sm">
+                    </div>
+                    <div class="col-xs-2">
+                        <div class="checkbox">
+                            <label>
+                                        <input type="checkbox" name='ct_is_free' value='0' {{ct_is_free==1?'checked':' '}} class='ckeck'> 免费课时
                                     </label>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="" class="col-xs-2 control-label">简介</label>
-                <div class="col-xs-8">
-                    <textarea name="ct_brief" value='{{ct_brief}}' rows="5" class="form-control input-sm"></textarea>
+                <div class="form-group">
+                    <label for="" class="col-xs-2 control-label">简介</label>
+                    <div class="col-xs-8">
+                        <textarea name="ct_brief" value='' rows="5" class="form-control input-sm">{{ct_brief}}</textarea>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="" class="col-xs-2 control-label">视频</label>
-                <div class="col-xs-8">
-                    <div class="input-group">
-                        <input type="text" name='ct_video' value='{{ct_video}}' class="form-control input-sm" placeholder="支持优酷、土豆、腾讯、网易公开课的视频页面地址导入">
+                <div class="form-group">
+                    <label for="" class="col-xs-2 control-label">视频</label>
+                    <div class="col-xs-8">
+                        <div class="input-group">
+                            <input type="text" name='ct_video' value='{{ct_video}}' class="form-control input-sm" placeholder="支持优酷、土豆、腾讯、网易公开课的视频页面地址导入">
 
-                        <span class="input-group-btn">
+                            <span class="input-group-btn">
                                         <button class="btn btn-success btn-sm">获取</button>
                                     </span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group form-inline">
-                <label for="" class="col-xs-2 control-label">时长</label>
-                <div class="col-xs-8">
-                    <input name='ct_minutes' value='{{ct_minutes}}' type="text" class="form-control input-sm small"> 分
-                    <input value='{{ct_seconds}}' name='ct_seconds' type="text" class="form-control input-sm small"> 秒
-                    <p class="help-block">时长必须为整数。</p>
+                <div class="form-group form-inline">
+                    <label for="" class="col-xs-2 control-label">时长</label>
+                    <div class="col-xs-8">
+                        <input name='ct_minutes' value='{{ct_minutes}}' type="text" class="form-control input-sm small">                        分
+                        <input value='{{ct_seconds}}' name='ct_seconds' type="text" class="form-control input-sm small">                        秒
+                        <p class="help-block">时长必须为整数。</p>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group form-inline">
-                <label for="" class="col-xs-2 control-label">建议学习时长</label>
-                <div class="col-xs-8">
-                    <input name='ct_recommend_duration' value='{{ct_recommend_duration}}' type="text" class="form-control input-sm small">                    小时
-                    <p class="help-block">（如未设置，则默认学习时长为视频时长3倍取整。）</p>
+                <div class="form-group form-inline">
+                    <label for="" class="col-xs-2 control-label">建议学习时长</label>
+                    <div class="col-xs-8">
+                        <input name='ct_recommend_duration' value='{{ct_recommend_duration}}' type="text" class="form-control input-sm small">                        小时
+                        <p class="help-block">（如未设置，则默认学习时长为视频时长3倍取整。）</p>
+                    </div>
                 </div>
-            </div>
             </form>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-link btn-sm" data-dismiss="modal">取消</button>
-            <button type="button" class="btn btn-success btn-sm"> 添 加 </button>
+            <button type="button" class="btn-form-update btn btn-success btn-sm"> 添 加 </button>
         </div>
     </div>
 </script>

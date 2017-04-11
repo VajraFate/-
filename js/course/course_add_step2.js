@@ -5,7 +5,7 @@ define(['aside', 'header', 'nprogress', 'jquery', 'jqueryForm', 'jqueryCookie', 
     $.get('/v6/course/picture', {
         cs_id: cs_id
     }, function (data) {
-        console.log(111);
+        console.log(111);    
         console.log(data);
         if (data.code == 200) {
             $('.steps').append(template('course-step2', data.result));
@@ -40,7 +40,7 @@ define(['aside', 'header', 'nprogress', 'jquery', 'jqueryForm', 'jqueryCookie', 
                 $('.thumb img').attr('src', data.result.path);
 
                 $('.preview img').attr('src', data.result.path);
-                location.href='/boxuegu/html/course/course_add_step3?cs_id'+cs_id;
+                location.href='/boxuegu/html/course/course_add_step3.html?cs_id='+cs_id;
             }
 
         })
