@@ -102,7 +102,7 @@
         </div>
         <div class="modal-body">
             <form id="add-edit-form" action={{ ct_id? '/v6/course/chapter/modify': '/v6/course/chapter/add' }} method="post" class="form-horizontal">
-                {{ if ct_id }} 
+                {{ if ct_id }}
                 <input type="hidden" name='ct_id' value='{{ct_id}}'> {{/if}}
                 <div class="form-group">
                     <label for="" class="col-xs-2 control-label">标题</label>
@@ -154,7 +154,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-link btn-sm" data-dismiss="modal">取消</button>
-            <button type="button" class="btn-form-update btn btn-success btn-sm"> 添 加 </button>
+            <button type="button" class="btn-form-update btn btn-success btn-sm" data-dismiss="modal"> 添 加 </button>
         </div>
     </div>
 </script>
