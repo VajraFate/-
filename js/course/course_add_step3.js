@@ -3,15 +3,17 @@ define(['bootstrap', 'aside', 'header', 'nprogress', 'jquery', 'jqueryForm', 'jq
 
     var cs_id = common.parseSearch('cs_id');
 
-// 渲染 课时列单
+    // 渲染 课时列单
     $.get('/v6/course/lesson', {
         cs_id: cs_id
     }, function (data) {
-        // console.log(111);
+        console.log(111);
         console.log(data);
         if (data.code == 200) {
             $('.steps').append(template('course-step3', data.result));
         }
+        showData();
+
 
     })
 
@@ -35,16 +37,18 @@ define(['bootstrap', 'aside', 'header', 'nprogress', 'jquery', 'jqueryForm', 'jq
     })
 
 
-    $(document).on('click','.btn-form-update',function(){
+    $(document).on('click', '.btn-form-update', function () {
         // console.log(222);
-        var is_on=$('.ckeck').prop('checked')?1:0;
+        var is_on = $('.ckeck').prop('checked') ? 1 : 0;
         console.log(is_on)
         $('#add-edit-form').ajaxSubmit({
-            data:{
-                ct_is_free:is_on
+            data: {
+                ct_is_free: is_on,
+                ct_cs_id: cs_id
             },
-            success:function(data){
+            success: function (data) {
                 console.log(data);
+                location.reload();
             }
         })
     })
@@ -53,6 +57,26 @@ define(['bootstrap', 'aside', 'header', 'nprogress', 'jquery', 'jqueryForm', 'jq
 
 
 
+    // 显示步骤阴影
+    showData();
+
+    function showData() {
+        var path = location.pathname;
+        var numb = 0;
+        switch (path) {
+            case '/boxuegu/html/course/course_add_step2.html':
+                numb = 2;
+                break;
+            case '/boxuegu/html/course/course_add_step1.html':
+                numb = 1;
+                break;
+            case '/boxuegu/html/course/course_add_step3.html':
+                numb = 3;
+                break;
+        }
+        console.log("numb===" + numb);
+        $('.steps .list-unstyled a').removeClass('active').eq(numb-1).addClass('active');
+    }
 
 
 

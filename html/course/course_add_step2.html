@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>学IT - 后台管理系统</title>
     <?php include($_SERVER['DOCUMENT_ROOT'].'/boxuegu/html/common/style.html')?>
-
+    <link rel='stylesheet' type="" href="/boxuegu/lib/Jcrop/css/Jcrop.css">
 </head>
 
 <body>
@@ -33,6 +33,7 @@
 
     <?php include($_SERVER['DOCUMENT_ROOT'].'/boxuegu/html/common/script.html')?>
 
+  <?php include($_SERVER['DOCUMENT_ROOT'].'/boxuegu/html/common/loading.html')?>
 </body>
 
 </html>
@@ -57,7 +58,7 @@
         <!-- 上传图片 -->
         <div class="picture col-xs-offset-2">
             <div class="preview">
-                <img src="{{cs_cover_original?cs_cover_original:'/boxuegu/img/default.png'}}" alt="">
+                <img src="{{cs_cover_original?cs_cover_original:'/boxuegu/img/default.png'}}" alt="" id='Jcrop-img'>
             </div>
             <p class="tips">
                 可上传jpg, gif, png格式文件, 图片建议尺寸大于300x150，文件大小不能超过2M。
@@ -67,7 +68,7 @@
                 <input type='file' id='uploadify' style="display:none" class="">
             </div>
             <div class="col-xs-2">
-                <a href="javascript:;" class="btn btn-warning btn-sm" disabled>裁切图片</a>
+                <a href="javascript:;" class="btn btn-warning btn-sm Jcrop-img-btn" >裁切图片</a>
             </div>
         </div>
     </div>

@@ -16,6 +16,9 @@ define(['aside', 'header', 'nprogress', 'jquery', 'jqueryForm', 'jqueryCookie', 
     }, function (data) {
         // console.log(data.result);
         $('.steps').html(template('couse_step1_form', data.result));
+
+        showData();
+
     })
 
 
@@ -49,11 +52,36 @@ define(['aside', 'header', 'nprogress', 'jquery', 'jqueryForm', 'jqueryCookie', 
             cs_id: cs_id,
             success: function (data) {
                 console.log(data);
-                location.href='/boxuegu/html/course/course_add_step2.html?cs_id='+data.result.cs_id;
+                location.href = '/boxuegu/html/course/course_add_step2.html?cs_id=' + data.result.cs_id;
             }
         })
         // alert('可以出发');
     })
+
+
+
+
+
+    // 显示步骤阴影
+
+    function showData() {
+        var path = location.pathname;
+        var numb = 0;
+        switch (path) {
+            case '/boxuegu/html/course/course_add_step2.html':
+                numb = 2;
+                break;
+            case '/boxuegu/html/course/course_add_step1.html':
+                numb = 1;
+                break;
+            case '/boxuegu/html/course/course_add_step3.html':
+                numb = 3;
+                break;
+        }
+        console.log("numb===" + numb);
+        $('.steps .list-unstyled a').removeClass('active').eq(numb-1).addClass('active');
+    }
+
 
 
     nprogress.done();

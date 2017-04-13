@@ -43,6 +43,7 @@
                 jqueryRegion: 'lib/jquery-region/jquery.region',
                 nprogress: 'lib/nprogress/nprogress',
                 uploadify: 'lib/uploadify/jquery.uploadify',
+                Jcrop:'lib/Jcrop/js/Jcrop'
            
             },
             shim: {
@@ -64,6 +65,9 @@
                 ckeditor:{
                     exports:'CKEDITOR'
                     
+                },
+                Jcrop:{
+                    deps:['jquery']
                 }
 
             },

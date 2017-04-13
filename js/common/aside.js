@@ -22,7 +22,7 @@ define(['jquery', 'jqueryCookie', 'template'], function ($, undefined, template)
         //JSON需要格式正确,不然会报错,所以这里用 异常处理   
         try {
             userInfoObj = JSON.parse(userInfoStr);
-            
+
         } catch (e) {
             userInfoObj = {};
         }
@@ -45,37 +45,47 @@ define(['jquery', 'jqueryCookie', 'template'], function ($, undefined, template)
 
 
 
- 
-    // 左侧列表点击后 阴影停留
 
-
-    // console.log(1);
+    /**
+     * 还有一些子页面或者隐藏比较深的页面，这些页面在导航左侧没有对应的列表，
+     * 那么我们可以手动添加一些配置，单独指定那些页面应该对应那个a标签。
+     * 1、把所有页面的路径与对应的左侧列表href使用key，value的方式映射
+     * 2、获取当前页面的路径
+     * 3、然后使用这个路径去对应的配置中查找
+     * 3.1、如果找到对应的配置值，那么使用这个值去找对应的a标签
+     * 3.2、如果没有找到，就直接使用这个路径去找对应的a标签
+     * 4、移除所有a标签的active类名
+     * 5、获取页面对应的a标签，给它单独添加active类名
+     * */
     //根据当前路径,找到阴影停留标签
 
     var path = location.pathname;
 
     var pathHref = {
         '/boxuegu/html/teacher/teacher_add.html': '/boxuegu/html/teacher/teacher_list.html',
-        '/boxuegu/html/course/course_add.html':'/boxuegu/html/course/course_list.html'
+        '/boxuegu/html/course/course_add.html': '/boxuegu/html/course/course_add.html',
+        '/boxuegu/html/course/course_add_step3.html': '/boxuegu/html/course/course_add.html',
+        '/boxuegu/html/course/course_add_step2.html': '/boxuegu/html/course/course_add.html',
+        '/boxuegu/html/course/course_add_step1.html': '/boxuegu/html/course/course_add.html',
+
     }
     // console.log($('.list-unstyled li a'));
 
-    var aHref=pathHref[path]?pathHref[path]: path;
+    var aHref = pathHref[path] ? pathHref[path] : path;
 
-
-    $('.list-unstyled li a').removeClass('active').filter('a[href="' + aHref + '"]').addClass('active');
-    
+    $('.list-unstyled li a').removeClass('active').filter('a[href="' + aHref + '"]').addClass('active').parentsUntil('.navs').show();
+// 让被选中的a标签所有的父都为展示状态
 
 
 
     // 课堂管理 菜单下拉功能
-    $('.class-list').on('click',function(e){
+    $('.class-list').on('click', function (e) {
         e.preventDefault();
         $(this).next().slideToggle();
     })
 
-    $('.system-list').on('click',function(e){
-        e.preventDefault();        
+    $('.system-list').on('click', function (e) {
+        e.preventDefault();
         $(this).next().slideToggle();
     })
 })
